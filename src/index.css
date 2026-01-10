@@ -245,10 +245,30 @@ p {
 
 #courses .courses-container .course {
 	position: relative;
+	background-color: rgb(193, 188, 188);
+	padding: 0px 0px 30px;
+	transition: .5s;
+}
+
+#courses .courses-container .course:nth-child(2){
+	transform: translateY(30px);
+}
+
+#courses .courses-container .course:last-child{
+	transform: translateY(60px);
+}
+
+#courses .courses-container .course .image {
+	overflow: hidden;
 }
 
 #courses .courses-container .course img {
 	width: 100%;
+}
+
+#courses .courses-container .course:hover img {
+	transform: scale(.9);
+	transform: rotate(10deg);
 }
 
 #courses .courses-container .course .sale {
@@ -458,7 +478,7 @@ p {
 #footer .footer-row {
 	padding: 2rem 0;
 	display: grid;
-	grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	gap: 3rem;
 }
 
@@ -486,3 +506,27 @@ p {
 }
 
 /*======= END FOOTER =======*/
+
+
+
+
+
+/* =================== */
+/* ANIMATION */
+/* =================== */
+
+.fade-in {
+	animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(100px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}

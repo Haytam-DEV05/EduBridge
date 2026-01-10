@@ -9,7 +9,7 @@ export default function Home() {
 
   return (
     <section id="home">
-      <div className="container">
+      <div className="container fade-in">
         <div className="home-header">
           <span>Join Us</span>
           <h1>Best Learning Opportinities</h1>

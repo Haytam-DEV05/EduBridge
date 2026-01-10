@@ -20,7 +20,9 @@ export default function Course({ course }) {
   return (
     <div className="course">
       <span className="sale">Sale</span>
-      <img src={img} alt={title} />
+      <div className="image">
+        <img src={img} alt={title} />
+      </div>
       <div className="content">
         <div className="course-field">
           <p className="departement">{departement}</p>
