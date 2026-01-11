@@ -6,6 +6,10 @@
 	box-sizing: border-box;
 }
 
+body {
+	overflow-x: hidden;
+}
+
 :root {
 	--dark-blue: #252b42;
 	--sky-blue: #23a6f0;
@@ -109,6 +113,33 @@ p {
 	vertical-align: middle;
 }
 
+#header .navBare .menu-bar {
+	display: none;
+	width: 40px;
+	height: 40px;
+	position: relative;
+	inset: 0;
+}
+
+#header .navBare .menu-bar svg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	cursor: pointer;
+	animation: rotatDeg .5s ease-in-out forwards;
+}
+
+@keyframes rotatDeg {
+	from {
+		transform: rotate(360deg);
+	}
+
+	to {
+		transform: rotate(0deg);
+	}
+}
+
 @media (max-width:800px) {
 	#header .navBare {
 		height: 90px;
@@ -127,6 +158,95 @@ p {
 		padding: 3px 10px;
 	}
 }
+
+
+
+@media (max-width:650px) {
+	#header .navBare {
+		overflow-x: hidden;
+		justify-content: space-around;
+		flex-direction: row;
+	}
+
+	#header .navBare ul,
+	#header .navBare .account {
+		display: none;
+	}
+
+	#header .navBare .menu-bar {
+		display: block;
+	}
+
+	.nav-mobile {
+		display: none;
+		top: 0;
+		right: -100px;
+		height: 100%;
+		width: 0%;
+		z-index: 90;
+		position: absolute;
+		display: none;
+		background-color: var(--light-gray);
+		transform: .5s all;
+	}
+
+	.nav-mobile.show {
+		display: block;
+		animation: openMenu .9s ease-in-out forwards;
+	}
+
+	@keyframes openMenu {
+		from {
+			width: 0%;
+			opacity: 0;
+			display: none;
+			right: -100px;
+		}
+
+		to {
+			width: 90%;
+			opacity: 1;
+			display: block;
+			right: 0;
+		}
+	}
+
+	.nav-mobile svg {
+		margin: 20px;
+		cursor: pointer;
+	}
+
+	.nav-mobile ul li {
+		margin: 1rem 0;
+	}
+
+	.nav-mobile .account {
+		margin-top: 4rem;
+	}
+
+	.nav-mobile .account a {
+		display: block;
+		margin: 20px 0;
+		padding: 20px 30px;
+		max-width: fit-content;
+		background-color: var(--sky-blue);
+		margin-left: auto;
+		margin-right: auto;
+		transition: .5s;
+	}
+
+	.nav-mobile .account a:last-child {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-height: 60px;
+	}
+
+	.nav-mobile .account a:hover {
+		transform: translateY(-11px);
+	}
+}
+
 
 /*====== END HEADER =======*/
 
@@ -250,11 +370,11 @@ p {
 	transition: .5s;
 }
 
-#courses .courses-container .course:nth-child(2){
+#courses .courses-container .course:nth-child(2) {
 	transform: translateY(30px);
 }
 
-#courses .courses-container .course:last-child{
+#courses .courses-container .course:last-child {
 	transform: translateY(60px);
 }
 
